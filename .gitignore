@@ -7,16 +7,5 @@
 *.iml
 out
 gen
-.idea/.gitignore
-.idea/codeStyles/
-.idea/libraries/
-.idea/misc.xml
-.idea/modules.xml
-.idea/modules/
-.idea/sbt.xml
-.idea/scala_compiler.xml
-.idea/uiDesigner.xml
-build.sbt
 project/
-src/
 target/
