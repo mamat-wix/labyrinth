@@ -1,0 +1,70 @@
+//package com.kissproject
+//
+//class BoardWithIndex(board: Board) {
+//  def find(p: Char => Boolean): (Char, (Int,Int)) = {
+//    val index = board.indexWhere(p)
+//    (board.get(index._1, index._2), index)
+//  }
+//
+//  def get(i: Int,j: Int): (Char, (Int,Int)) = {
+//    (board.get(i,j), (i,j))
+//  }
+//}
+
+//package com.kissproject
+////
+////class View[T](painter: Painter[T]) {
+////  def update(s: T): Unit = {
+////    painter.clear()
+////    painter.draw(s)
+////  }
+////}
+
+
+//package com.kissproject
+//
+//class ViewSpec extends org.specs2.mutable.Specification {
+//  "View" >> {
+//    "update" >> {
+//      "should call painter draw" >> {
+//        var counter = 0
+//        val countingPainter = new Painter[String] {
+//          override def draw(t: String): Unit = counter += 1
+//          override def clear(): Unit = {}
+//        }
+//
+//        val view = new View(countingPainter)
+//        view.update("")
+//
+//        counter must beEqualTo(1)
+//      }
+//    }
+//
+//    "should call painters clear" >> {
+//      var counter = 0
+//      val countingPainter = new Painter[String] {
+//        override def draw(t: String): Unit = {}
+//        override def clear(): Unit = counter += 1
+//      }
+//
+//      val view = new View(countingPainter)
+//      view.update("")
+//
+//      counter must beEqualTo(1)
+//    }
+//
+//    "should call clear before draw" >> {
+//      var checker = 0
+//      val checkingPainter = new Painter[String] {
+//        override def draw(t: String): Unit = {checker *= 0}
+//        override def clear(): Unit = {checker += 1}
+//      }
+//
+//      val view = new View(checkingPainter)
+//      view.update("")
+//
+//      checker must beEqualTo(0)
+//
+//    }
+//  }
+//}

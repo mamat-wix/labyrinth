@@ -7,11 +7,6 @@ class Board(boardStr: String) {
     else Some(get(index._1, index._2))
   }
 
-  //  def findFirst(p: Char => Boolean): Option[Char] = {
-  //
-  //  }
-
-
   def indexWhere(p: Char => Boolean): (Int, Int) = {
     var i, j = 0
     while (i < height) {
@@ -23,6 +18,12 @@ class Board(boardStr: String) {
       i += 1
     }
     (-1, -1)
+  }
+
+  def swap(i: Int, j: Int, i2: Int, j2: Int): Unit = {
+    val ijth = board(i)(j)
+    board(i)(j) = board(i2)(j2)
+    board(i2)(j2) = ijth
   }
 
   val board: Array[Array[Char]] = makeBoard(boardStr)
@@ -38,7 +39,7 @@ class Board(boardStr: String) {
 
   def get(i: Int, j: Int): Char = board(i)(j)
 
-  def withIndex: BoardWithIndex = new BoardWithIndex(this)
+  //def withIndex: BoardWithIndex = new BoardWithIndex(this)
 
   override def toString: String = board.map(line => line.mkString("")).mkString("\r\n")
 

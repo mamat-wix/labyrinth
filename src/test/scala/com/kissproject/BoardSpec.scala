@@ -51,16 +51,33 @@ class BoardSpec extends org.specs2.mutable.Specification {
       }
     }
 
-    "withIndex" >> {
-      board.withIndex.get(0, 0) must beEqualTo(('q', (0, 0)))
+//    "withIndex" >> {
+//      board.withIndex.get(0, 0) must beEqualTo(('q', (0, 0)))
+//    }
+
+    "swap" >> {
+      "should swap two elements" >> {
+        val myBoard = board;
+        val (i,j) = (0,1)
+        val (i2,j2) = (1,0)
+        val ijth = myBoard.get(i,j)
+        val i2j2th = myBoard.get(i2,j2)
+        myBoard.swap(i,j,i2,j2)
+
+        (myBoard.get(i,j) must beEqualTo(i2j2th)) and
+          (myBoard.get(i2,j2) must beEqualTo(board.get(i,j)))
+      }
     }
   }
 
-  "BoardWithIndex" >> {
-    "get(i,j) should return (val, (i,j))" >> {
-      val boardWithIndex = new BoardWithIndex(board)
-      boardWithIndex.get(0, 0) must beEqualTo(('q', (0, 0)))
-    }
-  }
+//  "BoardWithIndex" >> {
+//    "get(i,j) should return (val, (i,j))" >> {
+//      board.withIndex.get(0, 0) must beEqualTo(('q', (0, 0)))
+//    }
+//
+//    "find returns value with index" >> {
+//      board.withIndex.find(_ == 'w') must beEqualTo(('w', (0, 1)))
+//    }
+//  }
 }
 
